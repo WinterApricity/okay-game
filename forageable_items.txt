@@ -1,0 +1,4 @@
+iron, 1
+log, 1
+stone, 1
+watermelon, 1
