@@ -5,6 +5,8 @@ class Item():
         """Initialize attributes of items."""
         self.name = name
         self.description = description
+        # Set the item amount in the user's inventory to 0.
+        self.amount = 0
         
 class Food(Item):
     """Subclass of Item, contains all food items of the game."""

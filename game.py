@@ -6,9 +6,10 @@ from player import Player
 class FakeMinecraft():
     """Overall class for the game, contains all functions and behaviors."""
     
-    def __init__(self):
+    def __init__(self, items):
         """Initialize attributes and behavior for the game."""
-        self.inventory = Inventory()
+        self.items = items
+        self.inventory = Inventory(self)
         self.player = Player()
         self.forage = Forage(self)
         self.craft = Craft(self)
@@ -73,7 +74,7 @@ class FakeMinecraft():
         if not self.craft.is_craftable(item):
             print("\n-== This item cannot be crafted. ==-")
         elif not self.craft.has_material(item, amount):
-            print("\n-== You do not the the resources to craft this item. ==-")
+            print("\n-== You do not have the resources to craft this item. ==-")
         else:
             self.craft.craft(item, amount)
             print(f"\n-== You crafted {item} {str(amount)} time(s). ==-")

@@ -82,9 +82,7 @@ class Craft():
         to craft.
         """
         for material in self.recipes[item]['recipe'].keys():
-            if material not in self.inventory.inventory.keys():
-                return False
-            elif self.recipes[item]['recipe'][material] * amount > self.inventory.inventory[material]:
+            if self.recipes[item]['recipe'][material] * amount > self.inventory.items[material].amount:
                 return False
 
         return True
